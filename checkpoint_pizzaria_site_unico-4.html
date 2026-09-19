@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CheckPoint Pizzaria</title>
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;background:#fff8ef;color:#171717}
+header{background:#171717;color:#fff;padding:20px 6%;position:sticky;top:0;z-index:10}
+nav{display:flex;justify-content:space-between;align-items:center}.logo{font-size:25px;font-weight:800}.logo span{color:#f2b544}
+nav a{color:#fff;text-decoration:none;margin-left:18px}
+.page{display:none}.page.active{display:block}
+.hero{padding:75px 7%;background:linear-gradient(135deg,#fff0dc,#fff8ef);min-height:55vh}
+.hero h1{font-size:clamp(42px,8vw,76px);margin:0 0 15px}.hero p{font-size:19px;line-height:1.6;max-width:650px}
+.btn{display:inline-block;border:0;background:#c92828;color:white;padding:14px 20px;border-radius:10px;font-weight:800;text-decoration:none;cursor:pointer;margin-top:12px}
+section{padding:48px 7%}.title{font-size:35px}.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
+.card{background:#fff;padding:23px;border-radius:16px;box-shadow:0 6px 22px #0001;cursor:pointer;transition:.2s}.card:hover{transform:translateY(-3px)}
+.price{color:#c92828;font-weight:800;font-size:20px;margin-top:14px}
+.menu{background:#171717;color:white}.menu .card{background:#242424}.menu .price{color:#f2b544}
+.items{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:17px}
+.item{background:white;padding:20px;border-radius:14px;box-shadow:0 4px 16px #0001}.item h3{margin-top:0}
+.sizes{font-size:14px;color:#666;line-height:1.6}.notice{background:#fff3cd;border-left:5px solid #f2b544;padding:15px;border-radius:9px;margin-bottom:22px;line-height:1.5}
+footer{background:#111;color:#ddd;padding:32px 7%;line-height:1.7}.small{font-size:13px;color:#999}
+@media(max-width:650px){nav a{display:none}.hero{padding-top:55px}section{padding:38px 5%}}
+</style>
+</head>
+<body>
+<header>
+<nav><div class="logo">Check<span>Point</span> Pizzaria</div>
+<div><a href="#" onclick="showPage('home')">Início</a><a href="#" onclick="showPage('menu')">Cardápio</a><a href="#" onclick="showPage('contato')">Contato</a></div></nav>
+</header>
+
+<main>
+<div id="home" class="page active">
+<section class="hero">
+<h1>CheckPoint Pizzaria 🍕</h1>
+<p>Pizza para curtir com a família e os amigos em Venda Nova do Imigrante, Espírito Santo.</p>
+<button class="btn" onclick="showPage('menu')">Ver cardápio</button>
+</section>
+<section>
+<h2 class="title">Escolha uma categoria</h2>
+<div class="cards">
+<div class="card" onclick="showPage('salgadas')"><h3>🍕 Pizzas salgadas</h3><p>Veja os sabores disponíveis.</p><div class="price">Ver cardápio →</div></div>
+<div class="card" onclick="showPage('doces')"><h3>🍫 Pizzas doces</h3><p>Confira as opções doces.</p><div class="price">Ver cardápio →</div></div>
+<div class="card" onclick="showPage('bebidas')"><h3>🥤 Bebidas</h3><p>Veja as opções disponíveis.</p><div class="price">Ver bebidas →</div></div>
+</div>
+</section>
+</div>
+
+<div id="menu" class="page">
+<section class="menu">
+<h1>🍕 Cardápio</h1><p>Escolha o que deseja consultar:</p>
+<div class="cards">
+<div class="card" onclick="showPage('salgadas')"><h3>🍕 Pizzas salgadas</h3><div class="price">Consultar →</div></div>
+<div class="card" onclick="showPage('doces')"><h3>🍫 Pizzas doces</h3><div class="price">Consultar →</div></div>
+<div class="card" onclick="showPage('bebidas')"><h3>🥤 Bebidas</h3><div class="price">Consultar →</div></div>
+</div>
+</section>
+</div>
+
+<div id="salgadas" class="page">
+<section><button class="btn" onclick="showPage('menu')">← Voltar ao cardápio</button>
+<h1>🍕 Pizzas salgadas</h1>
+<div class="notice">Os preços abaixo estão marcados como “a confirmar” porque não foram encontrados em uma fonte oficial pública. Não inventei valores.</div>
+<div class="items">
+<div class="item"><h3>Calabresa</h3><p>Calabresa e ingredientes da receita da casa.</p><div class="price">Preço a confirmar</div></div>
+<div class="item"><h3>Mussarela</h3><p>Mussarela e ingredientes da receita da casa.</p><div class="price">Preço a confirmar</div></div>
+<div class="item"><h3>Frango com Catupiry</h3><p>Frango e Catupiry.</p><div class="price">Preço a confirmar</div></div>
+<div class="item"><h3>Pepperoni</h3><p>Pepperoni e ingredientes da receita da casa.</p><div class="price">Preço a confirmar</div></div>
+<div class="item"><h3>Portuguesa</h3><p>Presunto, ovos e ingredientes da receita da casa.</p><div class="price">Preço a confirmar</div></div>
+<div class="item"><h3>Quatro Queijos</h3><p>Seleção de queijos.</p><div class="price">Preço a confirmar</div></div>
+<div class="item"><h3>Marguerita</h3><p>Mussarela, tomate e manjericão.</p><div class="price">Preço a confirmar</div></div>
+<div class="item"><h3>Bacon</h3><p>Bacon e ingredientes da receita da casa.</p><div class="price">Preço a confirmar</div></div>
+</div></section>
+</div>
+
+<div id="doces" class="page">
+<section><button class="btn" onclick="showPage('menu')">← Voltar ao cardápio</button>
+<h1>🍫 Pizzas doces</h1>
+<div class="notice">Os preços precisam ser confirmados com a pizzaria antes da publicação.</div>
+<div class="items">
+<div class="item"><h3>Chocolate</h3><p>Pizza doce de chocolate.</p><div class="price">Preço a confirmar</div></div>
+<div class="item"><h3>Chocolate com morango</h3><p>Chocolate e morango.</p><div class="price">Preço a confirmar</div></div>
+<div class="item"><h3>Banana com canela</h3><p>Banana, canela e cobertura doce.</p><div class="price">Preço a confirmar</div></div>
+<div class="item"><h3>Dois amores</h3><p>Combinação de chocolates.</p><div class="price">Preço a confirmar</div></div>
+</div></section>
+</div>
+
+<div id="bebidas" class="page">
+<section><button class="btn" onclick="showPage('menu')">← Voltar ao cardápio</button>
+<h1>🥤 Bebidas</h1>
+<div class="notice">Os preços e marcas precisam ser confirmados com a pizzaria.</div>
+<div class="items">
+<div class="item"><h3>Refrigerante 2 L</h3><p>Consulte os sabores disponíveis.</p><div class="price">Preço a confirmar</div></div>
+<div class="item"><h3>Refrigerante lata</h3><p>Consulte os sabores disponíveis.</p><div class="price">Preço a confirmar</div></div>
+<div class="item"><h3>Água</h3><p>Consulte as opções disponíveis.</p><div class="price">Preço a confirmar</div></div>
+<div class="item"><h3>Suco</h3><p>Consulte os sabores disponíveis.</p><div class="price">Preço a confirmar</div></div>
+</div></section>
+</div>
+
+<div id="contato" class="page">
+<section><h1>📍 Contato</h1>
+<div class="cards">
+<div class="card"><h3>Telefone</h3><p>(28) 99921-4405</p></div>
+<div class="card"><h3>Endereço</h3><p>Rua José Minetti, Venda Nova do Imigrante - ES</p></div>
+<div class="card"><h3>Horários</h3><p>Terça a quinta: 18h às 22h30<br>Sexta: 18h às 22h30<br>Sábado: 18h às 23h30<br>Domingo: 18h às 23h30</p></div>
+</div>
+<a class="btn" target="_blank" href="https://www.google.com/maps/search/?api=1&query=CheckPoint+Pizzaria+Venda+Nova+do+Imigrante+ES">Abrir no Google Maps</a>
+</section>
+</div>
+</main>
+
+<footer>
+<strong>CheckPoint Pizzaria</strong><br>Venda Nova do Imigrante — Espírito Santo<br><br>
+<span class="small">Modelo demonstrativo. Sabores e preços devem ser conferidos com o estabelecimento antes de uma publicação comercial.</span>
+</footer>
+
+<script>
+function showPage(id){
+ document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+ document.getElementById(id).classList.add('active');
+ window.scrollTo(0,0);
+}
+</script>
+</body>
+</html>
